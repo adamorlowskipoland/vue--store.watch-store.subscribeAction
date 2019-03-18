@@ -8,6 +8,7 @@ const store = new Vuex.Store({
     count: 0
   },
   mutations: {
+    reset: (state) => (state.count = 0),
     update: (state, payload) => (state.count += payload)
   },
   actions: {
@@ -16,15 +17,15 @@ const store = new Vuex.Store({
         setTimeout(() => {
           commit("update", payload);
           resolve();
-        }, 2000);
+        }, 1000);
       });
     },
-    justALogAction({ commit }) {
+    resetCount({ commit }) {
       return new Promise(resolve => {
         setTimeout(() => {
-          console.log("teeeeeeest");
+          commit("reset");
           resolve();
-        }, 1000);
+        }, 500);
       });
     }
   }
