@@ -6,7 +6,7 @@
     </div>
     <Buttons />
     <div>
-      <button @click="$store.dispatch('justALogAction');">
+      <button @click="$store.dispatch('resetCount');">
         call test action
       </button>
       <button @click="toggleLoader(true);">toggleLoader</button>
